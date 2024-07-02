@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(CMakeSFMLProject LANGUAGES CXX)
+project(DinoRunner LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
@@ -11,7 +11,7 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 add_executable(main src/main.cpp)
-target_link_libraries(main PRIVATE sfml-graphics)
+target_link_libraries(main PRIVATE sfml-graphics sfml-audio)
 target_compile_features(main PRIVATE cxx_std_17)
 
 if(WIN32)
